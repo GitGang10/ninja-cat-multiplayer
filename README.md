@@ -1,4 +1,4 @@
 # ninja-cat-multiplayer
 Our next game.
-#Credits
+# Credits
 Scratcher [amylaser](https://scratch.mit.edu/users/amylaser/) for the original Ninja Cat games.

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Ninja Cat Multiplayer</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="webgl.css" type="text/css">
     <link rel="shortcut icon" type="image/png" href="https://u.cubeupload.com/Spaceboy1010/nincat.png"/>
   </head>
   <body>
@@ -12,7 +13,7 @@
     <div class="head">
     <h1>Welcome to Ninja Cat Multiplayer!</h1>
     </div>
-    <!-- Game coming soon -->
+    <canvas id="glcanvas" width="640" height="480"></canvas>
     <div class="comicsans">
     <h1>Chat with other players here!</h1>
     </div>
@@ -24,4 +25,29 @@
     <p>Credit to <a href="https://scratch.mit.edu/users/amylaser/">amylaser</a> for the original Ninja Cat games.</p>
     </center>
   </body>
+  <script>
+    main();
+
+    //
+    // Start here
+    //
+    function main() {
+      const canvas = document.querySelector('#glcanvas');
+      // Initialize the GL context
+      const gl = canvas.getContext('webgl');
+
+      // If we don't have a GL context, give up now
+      // Only continue if WebGL is available and working
+
+      if (!gl) {
+        alert('Unable to initialize WebGL. Your browser or machine may not support it.');
+        return;
+      }
+
+      // Set clear color to black, fully opaque
+      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+      // Clear the color buffer with specified clear color
+      gl.clear(gl.COLOR_BUFFER_BIT);
+    }
+  </script>
 </html>
